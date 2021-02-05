@@ -5,6 +5,78 @@ variable
 mixins
 ------------------------------------------ */
 /* ---------------------------------------
+animation
+------------------------------------------ */
+.animation div {
+  -webkit-animation: anim-entete 1s both cubic-bezier(0, 1.24, 0.64, 0.71);
+          animation: anim-entete 1s both cubic-bezier(0, 1.24, 0.64, 0.71);
+}
+
+@-webkit-keyframes anim-entete {
+  0% {
+    -webkit-transform: translateX(500px);
+            transform: translateX(500px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes anim-entete {
+  0% {
+    -webkit-transform: translateX(500px);
+            transform: translateX(500px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/*
+.animation div:nth-of-type(1){
+    animation-delay: .5s;
+}
+.animation div:nth-of-type(2){
+    animation-delay: 1s;
+}
+.animation div:nth-of-type(3){
+    animation-delay: 1.5s;
+}
+.animation div:nth-of-type(4){
+    animation-delay: 2s;
+}
+.animation div:nth-of-type(5){
+    animation-delay: 2.5s;
+}
+*/
+.animation div:nth-of-type(1) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.animation div:nth-of-type(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.animation div:nth-of-type(3) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.animation div:nth-of-type(4) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.animation div:nth-of-type(5) {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+/* ---------------------------------------
 layout
 ------------------------------------------ */
 * {
@@ -76,9 +148,9 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .bloc img {
@@ -125,6 +197,72 @@ p {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: annonce1;
+}
+
+.principal {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: principal;
+}
+
+.pied-page {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: pied-page;
+}
+
+.entete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.entete section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.entete section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #666;
+}
+
+.annonce1 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: annonce1;
   background-color: #efebc5;
   color: #5e6e81;
   border-radius: 10px;
@@ -144,38 +282,9 @@ p {
           align-items: center;
 }
 
-.annonce2 {
-  padding: 42px;
-  margin: 20px;
-  background-color: #efebc5;
-  color: #1c2127;
-  grid-area: annonce2;
-}
-
-.annonce2 section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
 .principal {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: principal;
-}
-
-.pied-page {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: pied-page;
 }
 /*# sourceMappingURL=style.css.map */
